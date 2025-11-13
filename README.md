@@ -57,7 +57,7 @@ neural-network/
 1. **Clone the repository:**
 
 ```bash
-git clone https://github.com/yourusername/neural-network.git
+git clone https://github.com/IBaksteenI/neural-network.git
 cd neural-network
 ```
 

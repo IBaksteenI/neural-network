@@ -9,15 +9,15 @@ def train_model():
 
     transform = transforms.Compose([transforms.ToTensor()])
     trainset = datasets.MNIST(root='./data', train=True, download=True, transform=transform)
-    trainloader = torch.utils.data.DataLoader(trainset, batch_size=64, shuffle=True)
+    trainloader = torch.utils.data.DataLoader(trainset, batch_size=600000, shuffle=True)
 
     model = NeuralNet().to(device)
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=0.001)
 
     # epoch means one complete pass through the training dataset
-    # Here we train for 25 epochs
-    epochs = 25
+    # Here we train for 100 epochs
+    epochs = 1000
     for epoch in range(epochs):
         running_loss = 0
         for images, labels in trainloader:

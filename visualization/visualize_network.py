@@ -17,7 +17,7 @@ from models.neural_network import NeuralNet
 def get_device():
     return torch.device("mps" if torch.backends.mps.is_available() else "cpu")
 
-def get_test_loader(batch_size=100, normalize=False, num_workers=2):
+def get_test_loader(batch_size=600000, normalize=False, num_workers=2):
     tfms = [transforms.ToTensor()]
     if normalize:
         tfms.append(transforms.Normalize((0.1307,), (0.3081,)))
@@ -215,7 +215,7 @@ def compute_confusion_matrix(model, device=None, normalize=False):
     """Compute confusion matrix and accuracy on test set"""
     if device is None:
         device = get_device()
-    loader = get_test_loader(batch_size=512, normalize=normalize)
+    loader = get_test_loader(batch_size=600000, normalize=normalize)
     num_classes = 10
     cm = np.zeros((num_classes, num_classes), dtype=np.int64)
     correct = 0
@@ -245,7 +245,7 @@ def visualize_all(model=None, testloader=None, device=None):
         model = load_model(model, device=device)
     
     if testloader is None:
-        testloader = get_test_loader(batch_size=100)
+        testloader = get_test_loader(batch_size=600000)
 
     model.eval()
     images, labels = next(iter(testloader))
@@ -383,5 +383,5 @@ if __name__ == "__main__":
     print(f"Using device: {device}")
 
     model = load_model(device=device)
-    testloader = get_test_loader(batch_size=100)
+    testloader = get_test_loader(batch_size=600000)
     visualize_all(model, testloader=testloader, device=device)
