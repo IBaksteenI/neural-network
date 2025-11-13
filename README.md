@@ -2,7 +2,7 @@
 
 A PyTorch-based neural network that learns to recognize handwritten digits (0-9) from the MNIST dataset, with real-time visualization of network activations.
 
-[Neural Network Visualization](imgs/visualization_example.png)
+![Neural Network Visualization](imgs/visualization_example.png)
 
 ## Table of Contents
 
@@ -71,7 +71,7 @@ source venv/bin/activate
 3. **Install dependencies:**
 
 ```bash
-pip install torch torchvision numpy matplotlib
+pip install -r requirements.txt
 ```
 
 ---
