@@ -1,4 +1,4 @@
-# Neural Engine - MNIST Digit Classifier
+# Neural Network - MNIST Digit Classifier
 
 A PyTorch-based neural network that learns to recognize handwritten digits (0-9) from the MNIST dataset, with real-time visualization of network activations.
 
@@ -33,7 +33,7 @@ This project demonstrates a complete deep learning pipeline:
 ## Project Structure
 
 ```
-neural-engine/
+neural-network/
 ├── models/
 │   └── neural_network.py      # Network architecture definition
 ├── training/
@@ -57,8 +57,8 @@ neural-engine/
 1. **Clone the repository:**
 
 ```bash
-git clone https://github.com/yourusername/neural-engine.git
-cd neural-engine
+git clone https://github.com/yourusername/neural-network.git
+cd neural-network
 ```
 
 2. **Create and activate virtual environment:**
